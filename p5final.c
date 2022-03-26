@@ -8,20 +8,14 @@ int input()
 }
 int gcd(int a, int b)
 {
-  if(b>a)
+  int hcf;
+  int large=(a>b)?(a):(b);
+  for(int i=1;i<large;i++)
   {
-    int temp=a;
-    a=b;
-    b=temp;
+    if(a%i==0 && b%i==0)
+      hcf=i;
   }
-  int rem=a%b;
-  while(rem==0)
-  {
-    int temp=b;
-    b=rem;
-    rem=temp%rem;
-  }
-  return rem;
+  return hcf;
 }
 void output(int a,int b, int gcd)
 {
